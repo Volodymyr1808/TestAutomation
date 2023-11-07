@@ -1,4 +1,4 @@
-export class BasePage {
+export default class BasePage {
     constructor(url) {
         this.url = url; 
     }

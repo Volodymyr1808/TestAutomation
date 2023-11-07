@@ -130,7 +130,13 @@ export const config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 60000,
+        
+        before: function () {
+            const chai = require('chai');
+            const expect  = chai;
+            chai.use(require('chai-webdriverio').default);
+            global.expect = expect;
     },
 
     //
@@ -280,4 +286,5 @@ export const config = {
     */
     // onReload: function(oldSessionId, newSessionId) {
     // }
-}
+    }}
+
